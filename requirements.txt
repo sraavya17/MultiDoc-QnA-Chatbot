@@ -1,0 +1,11 @@
+langchain
+langchain-groq
+langchain-community
+langchain-huggingface
+langchain-unstructured
+groq
+python-dotenv
+sentence-transformers
+pypdf
+unstructured
+faiss-cpu

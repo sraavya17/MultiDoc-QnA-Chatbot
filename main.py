@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
-#from langchain_community.document_loaders import UnstructuredFileLoader
 from langchain_unstructured import UnstructuredLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -22,8 +21,6 @@ def load_documents(file_paths):
             loader = PyPDFLoader(file_path)
         elif file_path.endswith('.txt'):
             loader = TextLoader(file_path)
-        #elif file_path.endswith(('.docx','.doc')):
-           # loader = UnstructuredWordDocumentLoader(file_path)
         else:
             loader = UnstructuredLoader(file_path)
         documents.extend(loader.load())
@@ -69,7 +66,6 @@ def create_qa_chain(llm,vector_store):
 
 # Main function to run the application
 def main():
-    #file_paths = [r'C:\Users\Sraavya\OneDrive\Desktop\personal data\Sulakshana_Sraavya_Resume.pdf']
     file_paths = ['sample_pdf.pdf', 'sample_txt.txt']
     documents = load_documents(file_paths)
 
